@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sistema de Justificación de Inasistencias — Demo</title>
+<style>
+:root{
+  --primary:#1a3a5c;--accent:#2563eb;--accent-light:#dbeafe;--success:#16a34a;--error:#dc2626;--warning:#d97706;
+  --bg:#f8fafc;--card:#ffffff;--border:#e2e8f0;--text:#1e293b;--muted:#64748b;--radius:10px;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.topbar{background:var(--primary);color:#fff;padding:14px 20px;padding-top:calc(14px + env(safe-area-inset-top,0px));display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.topbar .brand{font-weight:700;font-size:15px}
+.topbar .brand span{opacity:.7;font-weight:400;font-size:12px;display:block}
+.tabs{display:flex;gap:6px}
+.tab-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:7px 14px;border-radius:7px;font-size:13px;cursor:pointer}
+.tab-btn.active{background:#fff;color:var(--primary);font-weight:600}
+.wrap{max-width:720px;margin:0 auto;padding:28px 16px 48px}
+header.form-head{background:var(--primary);color:#fff;padding:1.5rem 2rem;border-radius:var(--radius) var(--radius) 0 0}
+header.form-head h1{font-size:1.2rem;font-weight:600}
+header.form-head p{font-size:.85rem;opacity:.8;margin-top:4px}
+.badge{display:inline-block;background:rgba(255,255,255,.15);padding:2px 10px;border-radius:20px;font-size:.72rem;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:0 0 var(--radius) var(--radius);padding:2rem;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.info-banner{background:var(--accent-light);border-left:4px solid var(--accent);padding:.75rem 1rem;border-radius:0 7px 7px 0;font-size:.85rem;color:var(--primary);margin:0 0 1rem}
+.demo-notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:7px;padding:.7rem .9rem;font-size:.82rem;color:#9a3412;margin-bottom:1rem}
+.section-title{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin:1.3rem 0 .8rem;padding-bottom:6px;border-bottom:2px solid var(--accent-light)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1rem}
+label{display:block;font-size:.83rem;font-weight:500;margin-bottom:5px}
+.required::after{content:" *";color:var(--error)}
+input,select,textarea{width:100%;padding:.6rem .85rem;border:1px solid var(--border);border-radius:7px;font-size:.88rem;color:var(--text);background:#fff;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+textarea{resize:vertical;min-height:80px}
+.upload-area{display:block;border:2px dashed var(--border);border-radius:var(--radius);padding:1.6rem;text-align:center;background:var(--bg);cursor:pointer}
+.upload-area.dragover{border-color:var(--accent);background:var(--accent-light)}
+.file-input{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.file-status{font-size:.8rem;color:var(--muted);margin-top:8px}
+.upload-icon{font-size:2.2rem;margin-bottom:6px}
+.upload-area p{font-size:.85rem;color:var(--muted)}
+.upload-area strong{color:var(--accent)}
+.hint{font-size:.76rem;color:var(--muted);margin-top:4px}
+.submit-btn{width:100%;padding:.85rem;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;margin-top:1.3rem;display:flex;align-items:center;justify-content:center;gap:8px}
+.submit-btn:disabled{background:#93c5fd}
+.spinner{display:none;width:16px;height:16px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+#success-msg{display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius);padding:1.4rem;text-align:center}
+#success-msg h3{color:var(--success);font-size:1.05rem;margin-bottom:6px}
+#success-msg p{color:var(--muted);font-size:.86rem}
+#success-msg .code{font-size:1.4rem;font-weight:700;color:var(--primary);margin:10px 0}
+@media(max-width:540px){.form-row{grid-template-columns:1fr}}
+/* pipeline view */
+.flow-intro{font-size:.88rem;color:var(--muted);max-width:560px;margin-bottom:22px}
+.timeline{position:relative;padding-left:26px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--border)}
+.step{position:relative;background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px 14px;margin-bottom:12px}
+.step::before{content:"";position:absolute;left:-23px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 2px var(--accent)}
+.step .s-title{font-weight:600;font-size:.9rem;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.step .s-desc{font-size:.8rem;color:var(--muted);margin-top:3px}
+.tag{font-size:.68rem;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.tag.trigger{background:#e0e7ff;color:#4338ca}
+.tag.logic{background:#f1f5f9;color:#475569}
+.tag.ai{background:#fae8ff;color:#a21caf}
+.tag.db{background:#dbeafe;color:#1d4ed8}
+.tag.out{background:#dcfce7;color:#15803d}
+.decision-table{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px;font-size:.78rem}
+.decision-table div{padding:5px 8px;border-radius:6px;background:var(--bg)}
+.decision-table .ok{color:var(--success);font-weight:600}
+.decision-table .warn{color:var(--warning);font-weight:600}
+.decision-table .bad{color:var(--error);font-weight:600}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Sistema de Justificación de Inasistencias<span>n8n · Docker · PostgreSQL · OCR · IA · Telegram</span></div>
+  <div class="tabs">
+    <button class="tab-btn active" id="tabForm">Formulario</button>
+    <button class="tab-btn" id="tabFlow">Flujo de automatización</button>
+  </div>
+</div>
+
+<main class="wrap" id="view-form">
+  <header class="form-head">
+    <h1>Solicitud de Justificación de Inasistencia</h1>
+    <p>Demostración de la interfaz del sistema de gestión de solicitudes.</p>
+    <span class="badge">Respuesta simulada</span>
+  </header>
+  <div class="card">
+    <p class="demo-notice"><strong>Demo interactiva:</strong> no envía ni almacena datos, no procesa documentos y no contacta Telegram. Usa información ficticia.</p>
+    <div class="info-banner">En el sistema completo, las solicitudes se analizan y notifican automáticamente. Esta demo solo muestra la interfaz y no contacta servicios externos.</div>
+    <form id="justification-form">
+      <div class="section-title">Datos del Estudiante</div>
+      <div class="form-row">
+        <div class="form-group"><label class="required" for="studentId">ID / Código Estudiantil</label><input id="studentId" name="studentId" placeholder="Ej: 2024001234" required></div>
+        <div class="form-group"><label class="required" for="studentName">Nombre Completo</label><input id="studentName" name="studentName" placeholder="Nombre y apellidos" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="required" for="studentEmail">Correo Electrónico</label><input id="studentEmail" name="studentEmail" type="email" placeholder="correo@institucion.edu.co" required></div>
+        <div class="form-group"><label for="studentProgram">Programa / Carrera</label><input id="studentProgram" name="studentProgram" placeholder="Ej: Desarrollo de Software"></div>
+      </div>
+      <div class="form-group"><label for="telegramId">Chat ID de Telegram (opcional)</label><input id="telegramId" name="telegramId" placeholder="Ej: 123456789"><p class="hint">En una integración real, el bot usaría este dato para las notificaciones.</p></div>
+      <div class="section-title">Detalles de la Inasistencia</div>
+      <div class="form-row">
+        <div class="form-group"><label class="required" for="absenceDate">Fecha de Inasistencia</label><input id="absenceDate" name="absenceDate" type="date" required></div>
+        <div class="form-group"><label class="required" for="absenceReason">Motivo</label>
+          <select id="absenceReason" name="absenceReason" required><option value="">Seleccionar motivo...</option><option>Enfermedad</option><option>Accidente</option><option>Fallecimiento familiar</option><option>Cita médica</option><option>Emergencia familiar</option><option>Trámite oficial</option><option>Otro</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label for="absenceDescription">Descripción Detallada</label><textarea id="absenceDescription" name="absenceDescription" placeholder="Describe brevemente la situación..."></textarea></div>
+      <div class="section-title">Documento de Soporte</div>
+      <label class="upload-area" id="uploadArea" for="supportFile"><div class="upload-icon" aria-hidden="true">↥</div><p><strong>Arrastra un archivo aquí</strong> o haz clic para seleccionarlo</p><p>PDF, JPG, PNG — Máx. 5 MB</p><p class="file-status" id="fileStatus" aria-live="polite">No se ha seleccionado ningún archivo.</p></label>
+      <input class="file-input" id="supportFile" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required>
+      <button type="submit" class="submit-btn" id="submit-btn"><span id="btn-text">Probar envío de muestra</span><div class="spinner" id="spinner" aria-hidden="true"></div></button>
+    </form>
+    <div id="success-msg">
+      <h3>Simulación completada</h3>
+      <p>No se envió ni guardó información y el documento no fue analizado.</p>
+      <div class="code" id="request-code">JUS-DEMO-00001</div>
+      <p>El código es solo ilustrativo; esta demo no genera solicitudes reales ni notificaciones.</p>
+    </div>
+  </div>
+</main>
+
+<section class="wrap hidden" id="view-flow" aria-labelledby="flowTitle" style="display:none;max-width:640px">
+  <h1 id="flowTitle" style="font-size:1.3rem;margin-bottom:8px">Pipeline de automatización (n8n)</h1>
+  <p class="flow-intro">Vista del workflow del proyecto: n8n con Docker, PostgreSQL y procesamiento documental. Esta demo no dispara el flujo ni se conecta a servicios externos.</p>
+  <div class="timeline">
+    <div class="step"><div class="s-title">Webhook de recepción <span class="tag trigger">Trigger</span></div><div class="s-desc">n8n recibe el formulario con el archivo adjunto (multipart/form-data).</div></div>
+    <div class="step"><div class="s-title">Validar y sanitizar input <span class="tag logic">Code</span></div><div class="s-desc">Verifica campos obligatorios y limpia los datos recibidos.</div></div>
+    <div class="step"><div class="s-title">Registrar estudiante y solicitud <span class="tag db">PostgreSQL</span></div><div class="s-desc">Upsert del estudiante y creación del registro de solicitud.</div></div>
+    <div class="step"><div class="s-title">Calcular hash y verificar duplicado <span class="tag logic">Code + DB</span></div><div class="s-desc">Evita que el mismo documento se use dos veces para justificar inasistencias distintas.</div></div>
+    <div class="step"><div class="s-title">OCR.Space — Extraer texto <span class="tag ai">API</span></div><div class="s-desc">Extrae el texto del PDF o imagen del soporte adjunto.</div></div>
+    <div class="step"><div class="s-title">Google Gemini — Clasificar documento <span class="tag ai">IA</span></div><div class="s-desc">Analiza el texto extraído y evalúa la validez del soporte.</div></div>
+    <div class="step">
+      <div class="s-title">Motor de decisión híbrido <span class="tag logic">Code</span></div>
+      <div class="s-desc">Combina el score de confianza de la IA con las reglas del sistema.</div>
+      <div class="decision-table">
+        <div class="ok">≥ 80% → Aprobación automática</div>
+        <div class="warn">40–79% → Revisión manual</div>
+        <div class="bad">&lt; 40% → Rechazo automático</div>
+        <div class="bad">Fraude / duplicado → Rechazo</div>
+      </div>
+    </div>
+    <div class="step"><div class="s-title">Guardar resultado <span class="tag db">PostgreSQL + Sheets</span></div><div class="s-desc">Persiste el resultado y lo refleja en el dashboard de Google Sheets.</div></div>
+    <div class="step"><div class="s-title">Notificar al estudiante <span class="tag out">Telegram Bot</span></div><div class="s-desc">Envía el resultado por Telegram; soporta /status, /history y /help.</div></div>
+  </div>
+</section>
+
+<script>
+document.getElementById("justification-form").addEventListener("submit",e=>{
+  e.preventDefault()
+  const btn=document.getElementById("submit-btn"),spinner=document.getElementById("spinner"),text=document.getElementById("btn-text")
+  btn.disabled=true;spinner.style.display="inline-block";text.textContent="Simulando..."
+  setTimeout(()=>{
+    document.getElementById("justification-form").style.display="none"
+    document.getElementById("success-msg").style.display="block"
+  },1100)
+})
+const supportFile=document.getElementById("supportFile")
+const uploadArea=document.getElementById("uploadArea")
+const fileStatus=document.getElementById("fileStatus")
+function validateSupportFile(file){
+  if(!file)return false
+  if(!/\.(pdf|jpe?g|png)$/i.test(file.name)){fileStatus.textContent="Formato no válido. Selecciona PDF, JPG o PNG.";return false}
+  if(file.size>5*1024*1024){fileStatus.textContent="El archivo supera el límite de 5 MB.";return false}
+  fileStatus.textContent=`Archivo seleccionado: ${file.name}`
+  return true
+}
+supportFile.addEventListener("change",()=>{
+  if(supportFile.files.length&&!validateSupportFile(supportFile.files[0]))supportFile.value=""
+})
+uploadArea.addEventListener("dragover",e=>{e.preventDefault();uploadArea.classList.add("dragover")})
+uploadArea.addEventListener("dragleave",()=>uploadArea.classList.remove("dragover"))
+uploadArea.addEventListener("drop",e=>{
+  e.preventDefault();uploadArea.classList.remove("dragover")
+  const file=e.dataTransfer.files[0]
+  if(!validateSupportFile(file)){supportFile.value="";return}
+  const transfer=new DataTransfer();transfer.items.add(file);supportFile.files=transfer.files
+})
+document.getElementById("tabForm").onclick=()=>{
+  document.getElementById("view-form").style.display="block"
+  document.getElementById("view-flow").style.display="none"
+  document.getElementById("tabForm").classList.add("active")
+  document.getElementById("tabFlow").classList.remove("active")
+}
+document.getElementById("tabFlow").onclick=()=>{
+  document.getElementById("view-flow").style.display="block"
+  document.getElementById("view-form").style.display="none"
+  document.getElementById("tabFlow").classList.add("active")
+  document.getElementById("tabForm").classList.remove("active")
+}
+</script>
+</body>
+</html>
