@@ -84,6 +84,7 @@ window.TRANSLATIONS = {
     'p8.kind': 'CLI · CRUD',
     'p.api': 'API',
     'p.web': 'Web',
+    'p.private': 'Código privado',
 
     'edu.title': 'Formación',
     'edu1.date': '2025–2026', 'edu1.title': 'Formación en Desarrollo de Software', 'edu1.place': 'Campuslands Guatemala',
@@ -195,6 +196,7 @@ window.TRANSLATIONS = {
     'p8.kind': 'CLI · CRUD',
     'p.api': 'API',
     'p.web': 'Web',
+    'p.private': 'Private code',
 
     'edu.title': 'Education',
     'edu1.date': '2025–2026', 'edu1.title': 'Software Development Training', 'edu1.place': 'Campuslands Guatemala',

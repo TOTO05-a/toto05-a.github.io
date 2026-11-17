@@ -286,3 +286,4 @@ code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .78em; 
 
 .hero__cv { display: none; }
 @media (max-width: 860px) { .hero__cv { display: inline-flex; } }
+.project__private { cursor: default; }
