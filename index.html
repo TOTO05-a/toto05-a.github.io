@@ -3,25 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eduardo Antonio Cruz Bolaños | Técnico en Desarrollo de Software</title>
-  <meta name="description" content="Portafolio de Eduardo Antonio Cruz Bolaños, técnico en desarrollo de software. Proyectos de desarrollo web, APIs, automatización, inteligencia artificial y robótica.">
-  <meta property="og:title" content="Eduardo Antonio Cruz Bolaños | Técnico en Desarrollo de Software" data-i18n-content="meta.title">
-  <meta property="og:description" content="Portafolio de Eduardo Antonio Cruz Bolaños, técnico en desarrollo de software. Proyectos de desarrollo web, APIs, automatización, inteligencia artificial y robótica." data-i18n-content="meta.desc">
+  <title>Eduardo Antonio Cruz Bolaños | Desarrollador full stack · Backend, APIs e IA aplicada</title>
+  <meta name="description" content="Portafolio de Eduardo Antonio Cruz Bolaños (Antonio Cruz), desarrollador full stack de Guatemala: backend con Node.js y TypeScript, APIs REST, bases de datos e IA aplicada con RAG.">
+  <meta name="author" content="Eduardo Antonio Cruz Bolaños">
+  <meta name="theme-color" content="#030014">
+  <link rel="canonical" href="https://toto05-a.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/images/projects/profile.jpeg">
-  <meta property="og:image:alt" content="Retrato de Eduardo Antonio Cruz Bolaños">
+  <meta property="og:url" content="https://toto05-a.github.io/">
+  <meta property="og:site_name" content="Antonio Cruz · Portafolio">
+  <meta property="og:locale" content="es_GT">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:title" content="Eduardo Antonio Cruz Bolaños | Desarrollador full stack · Backend, APIs e IA aplicada" data-i18n-content="meta.title">
+  <meta property="og:description" content="Portafolio de Eduardo Antonio Cruz Bolaños (Antonio Cruz), desarrollador full stack de Guatemala: backend con Node.js y TypeScript, APIs REST, bases de datos e IA aplicada con RAG." data-i18n-content="meta.desc">
+  <meta property="og:image" content="https://toto05-a.github.io/assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Antonio Cruz · Desarrollador full stack">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eduardo Antonio Cruz Bolaños | Técnico en Desarrollo de Software" data-i18n-content="meta.title">
-  <meta name="twitter:description" content="Portafolio de Eduardo Antonio Cruz Bolaños, técnico en desarrollo de software. Proyectos de desarrollo web, APIs, automatización, inteligencia artificial y robótica." data-i18n-content="meta.desc">
-  <meta name="twitter:image" content="assets/images/projects/profile.jpeg">
+  <meta name="twitter:title" content="Eduardo Antonio Cruz Bolaños | Desarrollador full stack · Backend, APIs e IA aplicada" data-i18n-content="meta.title">
+  <meta name="twitter:description" content="Portafolio de Eduardo Antonio Cruz Bolaños (Antonio Cruz), desarrollador full stack de Guatemala: backend con Node.js y TypeScript, APIs REST, bases de datos e IA aplicada con RAG." data-i18n-content="meta.desc">
+  <meta name="twitter:image" content="https://toto05-a.github.io/assets/images/og-image.jpg">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
   <script>try{const theme=localStorage.getItem('theme');if(theme==='light'||theme==='dark')document.documentElement.dataset.theme=theme;}catch(_){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="stylesheet" href="css/responsive.css?v=4">
 </head>
 <body>
 
@@ -59,16 +70,14 @@
 
 <header class="nav" id="nav">
   <div class="container nav__inner">
-    <!-- LOGO: coloca tu icono en assets/icons/logo.svg. Si no existe, se muestra un símbolo neutro -->
     <a class="logo" href="#home" aria-label="Eduardo Cruz">
       <span class="logo__icon">
         <svg class="logo__fallback" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 6l-3 12"/></svg>
-        <img src="assets/icons/logo.svg" alt="" onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
       </span>
       <span class="logo__text">Eduardo Cruz</span>
     </a>
 
-    <nav class="nav__menu" id="menu" aria-label="Principal">
+    <nav class="nav__menu" id="menu" aria-label="Principal" data-i18n-aria="a11y.nav">
       <a href="#home" data-i18n="nav.home">Inicio</a>
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
       <a href="#skills" data-i18n="nav.skills">Habilidades</a>
@@ -100,22 +109,23 @@
 <section class="hero" id="home">
   <div class="container hero__grid">
     <div class="hero__text">
-      <p class="badge" data-reveal="zoom"><span class="dot"></span><span data-i18n="hero.badge">Desarrollo de software · Backend y APIs</span></p>
+      <p class="badge" data-reveal="zoom"><span class="dot"></span><span data-i18n="hero.badge">Disponible para mi primer rol como desarrollador</span></p>
       <h1 data-reveal="up" data-delay="100">
         <span class="h1__line">Eduardo Antonio</span>
         <span class="h1__line grad">Cruz Bolaños</span>
       </h1>
-      <p class="hero__role" data-reveal="up" data-delay="200" data-i18n="hero.role">Técnico en Desarrollo de Software</p>
-      <p class="hero__tagline" data-reveal="up" data-delay="300" data-i18n="hero.tagline">Desarrollo soluciones de software claras y funcionales, enfocadas en resolver necesidades reales.</p>
+      <p class="hero__role" data-reveal="up" data-delay="200" data-i18n="hero.role">Desarrollador full stack · Backend, APIs e IA aplicada</p>
+      <p class="hero__tagline" data-reveal="up" data-delay="300" data-i18n="hero.tagline">Construyo aplicaciones web completas, del modelo de datos a la interfaz, enfocadas en resolver necesidades reales.</p>
       <p class="typing" data-reveal="up" data-delay="400" aria-live="off"><span data-i18n="hero.traitsLabel">Soy</span> <span class="typing__word" id="typing">Curioso</span><span class="typing__caret" aria-hidden="true"></span></p>
-      <p class="hero__desc" data-reveal="up" data-delay="500" data-i18n="hero.desc">Mi formación abarca backend, frontend, APIs, bases de datos e inteligencia artificial. También aprendí automatización con n8n y sistemas embebidos.</p>
+      <p class="hero__desc" data-reveal="up" data-delay="500" data-i18n="hero.desc">Trabajo con Node.js, TypeScript, PostgreSQL y MongoDB, y aplico IA con RAG y automatizaciones con n8n. Estudio Ingeniería en Sistemas en la UMG.</p>
       <div class="hero__cta" data-reveal="up" data-delay="600">
         <a class="btn btn--primary" href="#projects"><span data-i18n="hero.cta1">Ver proyectos</span><svg width="16" height="16"><use href="#i-arrow"/></svg></a>
         <a class="btn btn--outline" href="#contact"><span data-i18n="hero.cta2">Contactar</span><svg width="16" height="16"><use href="#i-mail"/></svg></a>
+        <a class="btn btn--outline hero__cv" href="assets/documents/CV-Eduardo-Cruz.pdf" download><span data-i18n="nav.cv">Descargar CV</span><svg width="16" height="16"><use href="#i-down"/></svg></a>
       </div>
       <ul class="socials" data-reveal="up" data-delay="700">
         <li><a class="icon-btn" href="https://github.com/TOTO05-a" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="20" height="20"><use href="#i-github"/></svg></a></li>
-        <li><a class="icon-btn" href="https://www.linkedin.com/in/eduardo-antonio-cruz-bolaños-834750396/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20"><use href="#i-linkedin"/></svg></a></li>
+        <li><a class="icon-btn" href="https://www.linkedin.com/in/antonio-cruz-834750396" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="20" height="20"><use href="#i-linkedin"/></svg></a></li>
         <li><a class="icon-btn" href="mailto:anntoniocruz7@gmail.com" aria-label="Email"><svg width="20" height="20"><use href="#i-mail"/></svg></a></li>
       </ul>
     </div>
@@ -125,9 +135,9 @@
       <div class="photo">
         <div class="photo__placeholder">
           <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="12" cy="8.500" r="4"/><path d="M4 21c1-4.500 4-6.500 8-6.500s7 2 8 6.500"/></svg>
-          <small data-i18n="hero.photoHint">Técnico en Desarrollo de Software</small>
+          <small data-i18n="hero.photoHint">Desarrollador full stack</small>
         </div>
-        <img src="assets/images/projects/profile.jpeg" alt="Retrato de Eduardo Antonio Cruz Bolaños" onerror="this.remove()">
+        <img src="assets/images/projects/profile.jpeg" alt="Retrato de Eduardo Antonio Cruz Bolaños" width="800" height="800" fetchpriority="high">
       </div>
     </div>
   </div>
@@ -139,7 +149,7 @@
     <h2 class="section__title" data-reveal="up" data-i18n="about.title">Sobre mí</h2>
     <div class="about">
       <div class="about__text">
-        <p data-reveal="up" data-i18n="about.p1">Mi formación abarca desarrollo backend y frontend, APIs, bases de datos e inteligencia artificial. También aprendí automatización con n8n y sistemas embebidos.</p>
+        <p data-reveal="up" data-i18n="about.p1">Soy desarrollador full stack con enfoque en backend: diseño APIs REST, modelos de datos y aplicaciones web con Node.js, TypeScript, PostgreSQL y MongoDB, y aplico IA con RAG y automatizaciones con n8n.</p>
         <p data-reveal="up" data-delay="100" data-i18n="about.p2">Analizo cada problema antes de programar y busco soluciones claras, funcionales y fáciles de mantener.</p>
         <p data-reveal="up" data-delay="200" data-i18n="about.p3">Me interesa integrarme a un equipo de desarrollo y contribuir en proyectos reales con colaboración y atención al detalle.</p>
       </div>
@@ -169,10 +179,10 @@
       <!-- EDITAR: añade o quita <li> dentro de cada grupo -->
       <div class="panel" id="panel-tech" role="tabpanel" aria-labelledby="tab-tech">
         <dl class="groups">
-          <div><dt data-i18n="g.backend">Backend y APIs</dt><dd><ul class="chips"><li class="skill-badge skill-badge--node"><i class="skill-icon devicon-nodejs-plain-wordmark colored" aria-hidden="true"></i>Node.js</li><li class="skill-badge skill-badge--python"><i class="skill-icon devicon-python-plain-wordmark colored" aria-hidden="true"></i>Python</li><li class="skill-badge">REST APIs</li><li class="skill-badge"><span data-i18n="s.nativeApis">APIs nativas</span></li></ul></dd></div>
+          <div><dt data-i18n="g.backend">Backend y APIs</dt><dd><ul class="chips"><li class="skill-badge skill-badge--node"><i class="skill-icon devicon-nodejs-plain-wordmark colored" aria-hidden="true"></i>Node.js</li><li class="skill-badge skill-badge--python"><i class="skill-icon devicon-python-plain-wordmark colored" aria-hidden="true"></i>Python</li><li class="skill-badge">REST APIs</li><li class="skill-badge"><i class="skill-icon devicon-typescript-plain colored" aria-hidden="true"></i>TypeScript</li><li class="skill-badge"><i class="skill-icon devicon-express-original" aria-hidden="true"></i>Express</li><li class="skill-badge">Zod</li></ul></dd></div>
           <div><dt data-i18n="g.db">Bases de datos</dt><dd><ul class="chips"><li class="skill-badge skill-badge--mysql"><i class="skill-icon devicon-mysql-plain-wordmark colored" aria-hidden="true"></i>MySQL</li><li class="skill-badge skill-badge--postgres"><i class="skill-icon devicon-postgresql-plain-wordmark colored" aria-hidden="true"></i>PostgreSQL</li><li class="skill-badge skill-badge--mongo"><i class="skill-icon devicon-mongodb-plain-wordmark colored" aria-hidden="true"></i>MongoDB</li><li class="skill-badge skill-badge--atlas"><i class="skill-icon devicon-mongodb-plain-wordmark colored" aria-hidden="true"></i>MongoDB Atlas</li></ul></dd></div>
-          <div><dt data-i18n="g.front">Frontend</dt><dd><ul class="chips"><li class="skill-badge skill-badge--html"><i class="skill-icon devicon-html5-plain-wordmark colored" aria-hidden="true"></i>HTML5</li><li class="skill-badge skill-badge--css"><i class="skill-icon devicon-css3-plain-wordmark colored" aria-hidden="true"></i>CSS3</li><li class="skill-badge skill-badge--js"><i class="skill-icon devicon-javascript-plain colored" aria-hidden="true"></i>JavaScript Vanilla</li></ul></dd></div>
-          <div><dt data-i18n="g.auto">Automatización</dt><dd><ul class="chips"><li class="skill-badge skill-badge--python"><i class="skill-icon devicon-python-plain-wordmark colored" aria-hidden="true"></i>Python</li><li class="skill-badge skill-badge--node"><i class="skill-icon devicon-nodejs-plain-wordmark colored" aria-hidden="true"></i>Node.js</li><li class="skill-badge skill-badge--n8n"><img class="skill-icon" src="assets/icons/n8n.svg" alt="" aria-hidden="true">n8n</li><li class="skill-badge">Inteligencia artificial</li></ul></dd></div>
+          <div><dt data-i18n="g.front">Frontend</dt><dd><ul class="chips"><li class="skill-badge skill-badge--html"><i class="skill-icon devicon-html5-plain-wordmark colored" aria-hidden="true"></i>HTML5</li><li class="skill-badge skill-badge--css"><i class="skill-icon devicon-css3-plain-wordmark colored" aria-hidden="true"></i>CSS3</li><li class="skill-badge skill-badge--js"><i class="skill-icon devicon-javascript-plain colored" aria-hidden="true"></i>JavaScript</li><li class="skill-badge"><i class="skill-icon devicon-react-original colored" aria-hidden="true"></i>React</li><li class="skill-badge">Astro</li></ul></dd></div>
+          <div><dt data-i18n="g.auto">IA aplicada y automatización</dt><dd><ul class="chips"><li class="skill-badge skill-badge--python"><i class="skill-icon devicon-python-plain-wordmark colored" aria-hidden="true"></i>Python</li><li class="skill-badge skill-badge--node"><i class="skill-icon devicon-nodejs-plain-wordmark colored" aria-hidden="true"></i>Node.js</li><li class="skill-badge skill-badge--n8n"><img class="skill-icon" src="assets/icons/n8n.svg" alt="" aria-hidden="true">n8n</li><li class="skill-badge">RAG</li><li class="skill-badge"><span data-i18n="s.embeddings">Embeddings</span></li></ul></dd></div>
           <div><dt data-i18n="g.robot">Robótica y sistemas embebidos</dt><dd><ul class="chips"><li class="skill-badge skill-badge--arduino"><i class="skill-icon devicon-arduino-plain-wordmark colored" aria-hidden="true"></i>Arduino IDE</li><li class="skill-badge skill-badge--cpp"><i class="skill-icon devicon-cplusplus-plain-wordmark colored" aria-hidden="true"></i>C++</li><li class="skill-badge"><span data-i18n="s.micro">Microcontroladores</span></li></ul></dd></div>
           <div><dt data-i18n="g.sim">Simulación y visión</dt><dd><ul class="chips"><li class="skill-badge skill-badge--python"><i class="skill-icon devicon-python-plain-wordmark colored" aria-hidden="true"></i>Python</li><li class="skill-badge">Pygame</li><li class="skill-badge skill-badge--opencv"><i class="skill-icon devicon-opencv-plain-wordmark colored" aria-hidden="true"></i>OpenCV</li><li class="skill-badge"><span data-i18n="s.simModel">Simulación y modelado de sistemas</span></li></ul></dd></div>
           <div><dt data-i18n="g.oop">Paradigmas y arquitectura</dt><dd><ul class="chips"><li class="skill-badge"><span data-i18n="s.oop">Programación Orientada a Objetos</span></li><li class="skill-badge"><span data-i18n="s.classes">Clases y objetos</span></li><li class="skill-badge"><span data-i18n="s.clean">Código limpio</span></li></ul></dd></div>
@@ -196,21 +206,21 @@
 
       <div class="panel" id="panel-soft" role="tabpanel" aria-labelledby="tab-soft" hidden>
         <ul class="chips chips--lg">
-          <li class="skill-badge">Comunicación</li>
-          <li class="skill-badge">Trabajo en equipo</li>
-          <li class="skill-badge">Resolución de problemas</li>
-          <li class="skill-badge">Pensamiento analítico</li>
-          <li class="skill-badge">Adaptabilidad</li>
-          <li class="skill-badge">Aprendizaje autodidacta</li>
-          <li class="skill-badge">Organización</li>
-          <li class="skill-badge">Responsabilidad</li>
+          <li class="skill-badge" data-i18n="soft.1">Comunicación</li>
+          <li class="skill-badge" data-i18n="soft.2">Trabajo en equipo</li>
+          <li class="skill-badge" data-i18n="soft.3">Resolución de problemas</li>
+          <li class="skill-badge" data-i18n="soft.4">Pensamiento analítico</li>
+          <li class="skill-badge" data-i18n="soft.5">Adaptabilidad</li>
+          <li class="skill-badge" data-i18n="soft.6">Aprendizaje autodidacta</li>
+          <li class="skill-badge" data-i18n="soft.7">Organización</li>
+          <li class="skill-badge" data-i18n="soft.8">Responsabilidad</li>
         </ul>
       </div>
 
       <div class="panel" id="panel-languages" role="tabpanel" aria-labelledby="tab-languages" hidden>
         <ul class="chips chips--lg">
-          <li class="skill-badge"><strong>Español</strong><span aria-hidden="true">—</span>Nativo</li>
-          <li class="skill-badge"><strong>Inglés</strong><span aria-hidden="true">—</span>B1</li>
+          <li class="skill-badge"><strong data-i18n="lang.es">Español</strong><span aria-hidden="true">—</span><span data-i18n="lang.native">Nativo</span></li>
+          <li class="skill-badge"><strong data-i18n="lang.en">Inglés</strong><span aria-hidden="true">—</span>B1</li>
         </ul>
       </div>
     </div>
@@ -221,53 +231,114 @@
 <section class="section" id="projects">
   <div class="container">
     <h2 class="section__title" data-reveal="up" data-i18n="projects.title">Proyectos</h2>
-    <p class="section__sub" data-reveal="up" data-delay="80" data-i18n="projects.sub">Demos de interfaz y enlaces a los repositorios para explorar el alcance de cada proyecto.</p>
+    <p class="section__sub" data-reveal="up" data-delay="80" data-i18n="projects.sub">Proyectos recientes, del más completo al más sencillo, con enlace a su repositorio y demo cuando la hay.</p>
 
     <div class="projects">
-      <article class="glass project" data-reveal="up">
-        <div class="project__media">
-          <div class="project__placeholder"><span data-i18n="p.shot"></span><code></code></div>
-          <img src="assets/images/projects/campuslands-tv-demo.jpeg" alt="Captura de Campuslands TV" loading="lazy" onerror="this.remove()">
+      <article class="glass project project--featured" data-reveal="up">
+        <div class="project__media project__media--code" aria-hidden="true">
+          <span class="project__kind" data-i18n="p1.kind">Monorepo full stack</span><code>apps/web · apps/app · apps/api</code>
         </div>
         <div class="project__body">
-          <h3 data-i18n="p1.name">Campuslands TV</h3>
-          <p data-i18n="p1.desc">Demo frontend de catálogo con búsqueda, filtros y panel de muestra. Usa datos estáticos y no consulta la API del repositorio enlazado.</p>
-          <ul class="chips chips--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+          <h3 data-i18n="p1.name">Roofing Business Platform</h3>
+          <p data-i18n="p1.desc">Monorepo TypeScript full stack para una empresa de roofing: sitio público bilingüe con Astro, plataforma interna con React y API con Express sobre PostgreSQL con seguridad por fila.</p>
+          <ul class="chips chips--sm"><li>TypeScript</li><li>Astro</li><li>React</li><li>Express</li><li>PostgreSQL</li><li>Docker</li></ul>
           <div class="project__links">
-            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/aplication-tv-api-backend" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
-            <a class="btn btn--outline btn--sm" href="assets/demos/campuslands-tv-demo.html" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-arrow"/></svg>Demo</a>
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/roofing-business-platform" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
           </div>
         </div>
       </article>
-
-      <article class="glass project" data-reveal="up" data-delay="120">
-        <div class="project__media project__media--contain">
-          <div class="project__placeholder"><span data-i18n="p.shot"></span><code></code></div>
-          <img src="assets/images/projects/justificacion-inasistencias-demo.jpeg" alt="Captura del sistema de justificación de inasistencias" loading="lazy" onerror="this.remove()">
+      <article class="glass project" data-reveal="up" data-delay="100">
+        <div class="project__media project__media--code" aria-hidden="true">
+          <span class="project__kind" data-i18n="p2.kind">RAG</span><code>consulta → embeddings → fuentes</code>
         </div>
         <div class="project__body">
-          <h3 data-i18n="p2.name">Sistema de Justificación de Inasistencias</h3>
-          <p data-i18n="p2.desc">Demo del formulario y visualización del workflow. Valida archivos localmente, pero no envía solicitudes ni ejecuta n8n.</p>
+          <h3 data-i18n="p2.name">RutaIA</h3>
+          <p data-i18n="p2.desc">Orientación académica que busca cursos en un catálogo institucional y genera recomendaciones con RAG citando sus fuentes.</p>
+          <ul class="chips chips--sm"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>RAG</li><li>n8n</li><li>Docker</li></ul>
+          <div class="project__links">
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/ruta-ia" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
+          </div>
+        </div>
+      </article>
+      <article class="glass project" data-reveal="up">
+        <div class="project__media project__media--code" aria-hidden="true">
+          <span class="project__kind" data-i18n="p3.kind">RAG y grafos</span><code>documento → fragmentos → grafo</code>
+        </div>
+        <div class="project__body">
+          <h3 data-i18n="p3.name">RAG-Grafo</h3>
+          <p data-i18n="p3.desc">Convierte documentos en un grafo de conocimiento con RAG: permite explorar nodos, hacer preguntas y comparar cinco estrategias de ajuste de modelos.</p>
+          <ul class="chips chips--sm"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>OpenRouter</li><li>vis-network</li></ul>
+          <div class="project__links">
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/rag-grafo-finetuning" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
+          </div>
+        </div>
+      </article>
+      <article class="glass project" data-reveal="up" data-delay="100">
+        <div class="project__media project__media--contain">
+          <img src="assets/images/projects/justificacion-inasistencias-demo.jpeg" alt="Captura del sistema de justificación de inasistencias" loading="lazy" width="1280" height="720">
+        </div>
+        <div class="project__body">
+          <h3 data-i18n="p4.name">Sistema de Justificación de Inasistencias</h3>
+          <p data-i18n="p4.desc">Automatización con n8n que recibe la solicitud, extrae el texto con OCR, la clasifica con IA y avisa por Telegram. La demo muestra el formulario y el workflow; no ejecuta n8n.</p>
           <ul class="chips chips--sm"><li>n8n</li><li>Docker</li><li>PostgreSQL</li><li>OCR</li><li>IA</li><li>Telegram</li></ul>
           <div class="project__links">
-            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/Mi-proyect-n8n-campuslands" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/justificacion-inasistencias-n8n" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
             <a class="btn btn--outline btn--sm" href="assets/demos/justificacion-inasistencias-demo.html" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-arrow"/></svg>Demo</a>
           </div>
         </div>
       </article>
-
-      <article class="glass project" data-reveal="up" data-delay="240">
-        <div class="project__media">
-          <div class="project__placeholder"><span data-i18n="p.shot"></span><code></code></div>
-          <img src="assets/images/projects/musicstream-demo.jpeg" alt="Captura de MusicStream" loading="lazy" onerror="this.remove()">
+      <article class="glass project" data-reveal="up" data-delay="200">
+        <div class="project__media project__media--code" aria-hidden="true">
+          <span class="project__kind" data-i18n="p5.kind">API REST</span><code>GET /applications · POST /applications</code>
         </div>
         <div class="project__body">
-          <h3 data-i18n="p3.name">MusicStream</h3>
-          <p data-i18n="p3.desc">Prototipo frontend con catálogo y selección de planes. El reproductor es visual: no reproduce audio ni procesa pagos.</p>
+          <h3 data-i18n="p5.name">Applications API</h3>
+          <p data-i18n="p5.desc">API REST de postulaciones con Express 5 y PostgreSQL, organizada en rutas, controladores, servicios y repositorios, con validación de datos con Zod.</p>
+          <ul class="chips chips--sm"><li>Node.js</li><li>Express</li><li>PostgreSQL</li><li>Zod</li></ul>
+          <div class="project__links">
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/applications-api" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
+          </div>
+        </div>
+      </article>
+      <article class="glass project" data-reveal="up">
+        <div class="project__media">
+          <img src="assets/images/projects/campuslands-tv-demo.jpeg" alt="Captura de Campuslands TV" loading="lazy" width="1280" height="720">
+        </div>
+        <div class="project__body">
+          <h3 data-i18n="p6.name">Campuslands TV</h3>
+          <p data-i18n="p6.desc">API REST con Express y MongoDB (JWT en cookies HttpOnly, Swagger y pruebas con Jest) y su frontend web. La demo usa datos estáticos y no consulta la API.</p>
+          <ul class="chips chips--sm"><li>Node.js</li><li>Express</li><li>MongoDB</li><li>JWT</li><li>Jest</li><li>JavaScript</li></ul>
+          <div class="project__links">
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/campuslands-tv-api" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg><span data-i18n="p.api">API</span></a>
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/campuslands-tv-web" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg><span data-i18n="p.web">Web</span></a>
+            <a class="btn btn--outline btn--sm" href="assets/demos/campuslands-tv-demo.html" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-arrow"/></svg>Demo</a>
+          </div>
+        </div>
+      </article>
+      <article class="glass project" data-reveal="up" data-delay="100">
+        <div class="project__media">
+          <img src="assets/images/projects/musicstream-demo.jpeg" alt="Captura de MusicStream" loading="lazy" width="1280" height="720">
+        </div>
+        <div class="project__body">
+          <h3 data-i18n="p7.name">MusicStream</h3>
+          <p data-i18n="p7.desc">Prototipo frontend con catálogo y selección de planes. El reproductor es visual: no reproduce audio ni procesa pagos.</p>
           <ul class="chips chips--sm"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
           <div class="project__links">
-            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/Proyecto-stream-Music-App-Eduardo-Antonio-Cruz-Bola-os" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/musicstream-app" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
             <a class="btn btn--outline btn--sm" href="assets/demos/musicstream-demo.html" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-arrow"/></svg>Demo</a>
+          </div>
+        </div>
+      </article>
+      <article class="glass project" data-reveal="up" data-delay="200">
+        <div class="project__media project__media--code" aria-hidden="true">
+          <span class="project__kind" data-i18n="p8.kind">CLI · CRUD</span><code>$ node src/index.js</code>
+        </div>
+        <div class="project__body">
+          <h3 data-i18n="p8.name">Inventario Gamer</h3>
+          <p data-i18n="p8.desc">Aplicación de consola en Node.js para administrar un inventario gamer con operaciones CRUD sobre MongoDB y una estructura modular.</p>
+          <ul class="chips chips--sm"><li>Node.js</li><li>MongoDB</li><li>Mongoose</li></ul>
+          <div class="project__links">
+            <a class="btn btn--outline btn--sm" href="https://github.com/TOTO05-a/inventario-gamer-mongodb" target="_blank" rel="noopener noreferrer"><svg width="16" height="16"><use href="#i-github"/></svg>GitHub</a>
           </div>
         </div>
       </article>
@@ -285,7 +356,7 @@
         <p class="timeline__program" data-i18n="edu1.title">Formación en Desarrollo de Software</p>
         <span class="timeline__date" data-i18n="edu1.date">2025–2026</span>
         <p data-i18n="edu1.desc">Formación técnica con enfoque práctico en desarrollo de software.</p>
-        <ul class="chips chips--sm" aria-label="Áreas de formación">
+        <ul class="chips chips--sm" aria-label="Áreas de formación" data-i18n-aria="edu.areas">
           <li data-i18n="edu1.topic1">Programación</li>
           <li data-i18n="edu1.topic2">Backend</li>
           <li data-i18n="edu1.topic3">Frontend</li>
@@ -302,7 +373,7 @@
         <p class="timeline__program" data-i18n="edu2.title">Ingeniería en Sistemas</p>
         <span class="timeline__date" data-i18n="edu2.date">2026–actualidad</span>
         <p data-i18n="edu2.desc">Primer semestre con contenidos de programación, tecnología, matemáticas y administración.</p>
-        <ul class="chips chips--sm" aria-label="Materias cursadas">
+        <ul class="chips chips--sm" aria-label="Materias cursadas" data-i18n-aria="edu.subjects">
           <li data-i18n="edu2.topic1">Bases de datos</li>
           <li data-i18n="edu2.topic2">Programación</li>
           <li data-i18n="edu2.topic3">HTML y CSS</li>
@@ -318,7 +389,7 @@
         <p class="timeline__program" data-i18n="edu3.title">Bachillerato en Ciencias y Letras con Orientación en Computación</p>
         <span class="timeline__date" data-i18n="edu3.date">2025</span>
         <p data-i18n="edu3.desc">En la competencia nacional de robótica Balam, en Guatemala, participé con mi robot RoboFut, que armé y programé desde cero, y quedé entre los 10 primeros lugares.</p>
-        <ul class="chips chips--sm" aria-label="Áreas de formación">
+        <ul class="chips chips--sm" aria-label="Áreas de formación" data-i18n-aria="edu.areas">
           <li data-i18n="edu3.topic1">Robótica y automatización</li>
           <li data-i18n="edu3.topic2">C++</li>
           <li data-i18n="edu3.topic3">Python</li>
@@ -355,7 +426,7 @@
       <ul class="contact__list">
         <li><a class="btn btn--outline contact__button" href="mailto:anntoniocruz7@gmail.com"><svg width="20" height="20"><use href="#i-mail"/></svg><span>anntoniocruz7@gmail.com</span></a></li>
         <li><a class="btn btn--outline contact__button" href="https://github.com/TOTO05-a" target="_blank" rel="noopener noreferrer"><svg width="20" height="20"><use href="#i-github"/></svg><span>GitHub</span></a></li>
-        <li><a class="btn btn--outline contact__button" href="https://www.linkedin.com/in/eduardo-antonio-cruz-bolaños-834750396/?isSelfProfile=true" target="_blank" rel="noopener noreferrer"><svg width="20" height="20"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
+        <li><a class="btn btn--outline contact__button" href="https://www.linkedin.com/in/antonio-cruz-834750396" target="_blank" rel="noopener noreferrer"><svg width="20" height="20"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
       </ul>
     </div>
   </div>
@@ -365,7 +436,7 @@
 
 <footer class="footer">
   <div class="container footer__inner">
-    <p><strong>Eduardo Antonio Cruz Bolaños</strong><span data-i18n="hero.role">Técnico en Desarrollo de Software</span></p>
+    <p><strong>Eduardo Antonio Cruz Bolaños</strong><span data-i18n="hero.role">Desarrollador full stack · Backend, APIs e IA aplicada</span></p>
     <nav class="footer__nav" aria-label="Footer">
       <a href="#about" data-i18n="nav.about">Sobre mí</a>
       <a href="#projects" data-i18n="nav.projects">Proyectos</a>
@@ -376,7 +447,7 @@
   </div>
 </footer>
 
-<script src="js/translations.js?v=2"></script>
-<script src="js/main.js?v=2"></script>
+<script src="js/translations.js?v=4"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
